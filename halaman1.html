@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ff69b4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            transition: transform 1s ease; /* Untuk animasi geser */
+        }
+        .button-container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #fff;
+            color: #ff69b4;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+    <script>
+        function goToNextPage() {
+            document.body.style.transform = 'translateX(-100%)'; // Mulai geser ke kiri
+            setTimeout(function() {
+                window.location.href = 'halaman2.html'; // Pindah halaman setelah animasi selesai
+            }, 1000); // Waktu untuk animasi geser
+        }
+    </script>
+</head>
+<body>
+    <div class="button-container">
+        <h1>Klik untuk Kejutan Ulang Tahun!</h1>
+        <button class="btn" onclick="goToNextPage()">Tekan Aku!</button>
+    </div>
+</body>
+</html>
